@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App default 1`] = `
+<body>
+  <div>
+    <p
+      style="text-align: center;"
+    >
+      This is Button Page
+    </p>
+     
+    <div
+      data-testid="app-tid"
+    >
+      <button
+        class="button primary svelte-15uobuy"
+        data-testid="button-tid"
+      >
+        Button
+      </button>
+    </div>
+  </div>
+</body>
+`;

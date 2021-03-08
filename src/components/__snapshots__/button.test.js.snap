@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button default 1`] = `
+<button
+  class="button primary svelte-15uobuy"
+  data-testid="button-tid"
+>
+  
+</button>
+`;
+
+exports[`Button disabled 1`] = `
+<button
+  class=" svelte-15uobuy"
+  data-testid="button-tid"
+  disabled=""
+>
+  undefined
+</button>
+`;
+
+exports[`Button loading 1`] = `
+<button
+  class=" svelte-15uobuy"
+  data-testid="button-tid"
+>
+  Loading...
+</button>
+`;
+
+exports[`Button primary 1`] = `
+<button
+  class="button primary svelte-15uobuy"
+  data-testid="button-tid"
+>
+  
+</button>
+`;
+
+exports[`Button secondary 1`] = `
+<button
+  class="button secondary svelte-15uobuy"
+  data-testid="button-tid"
+>
+  
+</button>
+`;
+
+exports[`Button title 1`] = `
+<button
+  class=" svelte-15uobuy"
+  data-testid="button-tid"
+>
+  Button Title
+</button>
+`;
+
+exports[`Button transparent 1`] = `
+<button
+  class="button transparent svelte-15uobuy"
+  data-testid="button-tid"
+>
+  
+</button>
+`;
+
+exports[`Button undefined 1`] = `
+<button
+  class="button primary svelte-15uobuy"
+  data-testid="button-tid"
+>
+  
+</button>
+`;
