@@ -13,7 +13,7 @@ exports[`App default 1`] = `
       data-testid="app-tid"
     >
       <button
-        class="button primary svelte-15uobuy"
+        class="button primary svelte-1p69ywv"
         data-testid="button-tid"
       >
         Button

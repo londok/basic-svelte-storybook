@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1615168062731" clover="3.2.0">
-  <project timestamp="1615168062732" name="All files">
+<coverage generated="1621392549551" clover="3.2.0">
+  <project timestamp="1621392549552" name="All files">
     <metrics statements="12" coveredstatements="12" conditionals="16" coveredconditionals="16" methods="0" coveredmethods="0" elements="28" coveredelements="28" complexity="0" loc="12" ncloc="12" packages="2" files="2" classes="2"/>
     <package name="src">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="App.svelte" path="/Users/indrakurniawan/Private/jest-component-testing/src/App.svelte">
+      <file name="App.svelte" path="/Users/indrakurniawan/Private/svelte-storybook/src/App.svelte">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
       <metrics statements="11" coveredstatements="11" conditionals="16" coveredconditionals="16" methods="0" coveredmethods="0"/>
-      <file name="button.svelte" path="/Users/indrakurniawan/Private/jest-component-testing/src/components/button.svelte">
+      <file name="button.svelte" path="/Users/indrakurniawan/Private/svelte-storybook/src/components/button.svelte">
         <metrics statements="11" coveredstatements="11" conditionals="16" coveredconditionals="16" methods="0" coveredmethods="0"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="11" count="9" type="cond" truecount="4" falsecount="0"/>
-        <line num="12" count="9" type="stmt"/>
-        <line num="13" count="9" type="stmt"/>
-        <line num="17" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="18" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="23" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="9" type="stmt"/>
-        <line num="25" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="28" count="32" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="13" type="cond" truecount="4" falsecount="0"/>
+        <line num="12" count="13" type="stmt"/>
+        <line num="13" count="13" type="stmt"/>
+        <line num="17" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="13" type="stmt"/>
+        <line num="26" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="40" type="cond" truecount="4" falsecount="0"/>
       </file>
     </package>
   </project>

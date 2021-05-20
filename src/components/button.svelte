@@ -17,6 +17,7 @@
     title = (await data.title) ? data.title : "";
     style = await `button ${data.type ? data.type : type.primary}`;
   });
+
 </script>
 
 <button
@@ -37,7 +38,7 @@
     border: none;
     border-radius: 500px;
     margin: 16px auto;
-    width: 100%;
+    width: 100px;
     cursor: pointer;
     outline: none;
     display: block;
@@ -70,4 +71,5 @@
     border: none;
     color: red;
   }
+
 </style>

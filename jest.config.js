@@ -7,7 +7,9 @@ module.exports = {
         debug: false,
       },
     ],
+    "^.+\\.stories\\.[jt]sx?$": "<rootDir>node_modules/@storybook/addon-storyshots/injectFileName",
   },
+  transformIgnorePatterns: ["node_modules/(?!@storybook/*)"],
   bail: false,
   verbose: true,
   moduleFileExtensions: [
@@ -20,11 +22,14 @@ module.exports = {
   ],
   testPathIgnorePatterns: [
     "/node_modules/",
-    "/build/"
+    "/build/",
+    "/storybook-static/"
   ],
   coveragePathIgnorePatterns: [
     "/node_modules/",
-    "/build/"
+    "/build/",
+    "/storybook-static/",
+    "/.storybook/",
   ],
   coverageProvider: "babel",
   collectCoverageFrom: [

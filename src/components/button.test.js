@@ -1,6 +1,7 @@
 import { render, fireEvent, waitFor } from '@testing-library/svelte';
 import { type } from "../constants"
 import Button from './button.svelte';
+
 const testId = "button-tid";
 const buttonData = {
   title: null,
@@ -9,99 +10,90 @@ const buttonData = {
   disabled: false,
   loading: false,
 }
+
 describe('Button', () => {
   it('default', async () => {
     expect.hasAssertions();
-const mockClick = jest.fn();
+
+    const mockClick = jest.fn();
     buttonData.click = mockClick;
     const { getByTestId } = render(Button, { props: { data: buttonData } });
     let button;
     await waitFor(() => {
       button = getByTestId(testId);
-      expect(button).toHaveTextContent('')
+      expect(button).toHaveTextContent("")
       expect(button.classList.contains(type.primary)).toBe(true);
       expect(button).toMatchSnapshot();
       fireEvent.click(button);
     })
     expect(mockClick).toHaveBeenCalledTimes(1);
   });
-it('undefined', async () => {
+
+  it('loading, but not disabled', async () => {
     expect.hasAssertions();
-const mockClick = jest.fn();
+
+    const mockClick = jest.fn();
     buttonData.click = mockClick;
-    const { getByTestId } = render(Button);
-    await waitFor(() => {
-      const button = getByTestId(testId);
-      expect(button).toHaveTextContent('')
-      expect(button.classList.contains("button")).toBe(true);
-      expect(button).toMatchSnapshot();
-      fireEvent.click(button);
-    })
-    expect(mockClick).toHaveBeenCalledTimes(0);
-  });
-it('title', async () => {
-    expect.hasAssertions();
-const { getByTestId } = render(Button, { props: { data: { ...buttonData, title: "Button Title" } } });
-    await waitFor(() => {
-      const button = getByTestId(testId);
-      expect(button).toHaveTextContent("Button Title");
-      expect(button).toMatchSnapshot();
-    })
-  });
-it('loading', async () => {
-    expect.hasAssertions();
-const mockClick = jest.fn();
-    buttonData.click = mockClick;
-    const { getByTestId } = render(Button, { props: { data: { ...buttonData, loading: true } } });
-    let button;
+    const { getByTestId } = render(Button, { props: { data: { ...buttonData, loading: true, disabled: false } } });
+    let button
     await waitFor(() => {
       button = getByTestId(testId);
+      expect(button).not.toHaveAttribute('disabled')
       expect(button).toHaveTextContent("Loading...")
       expect(button).toMatchSnapshot();
       fireEvent.click(button);
     })
     expect(mockClick).toHaveBeenCalledTimes(0);
-  });
-it('disabled', async () => {
+  })
+
+  it('disabled, but not loading', async () => {
     expect.hasAssertions();
-const mockClick = jest.fn();
+
+    const mockClick = jest.fn();
     buttonData.click = mockClick;
-    const { getByTestId } = render(Button, { props: { data: { ...buttonData, disabled: true } } });
+    const { getByTestId } = render(Button, { props: { data: { ...buttonData, loading: false, disabled: true } } });
     let button
     await waitFor(() => {
       button = getByTestId(testId);
       expect(button).toHaveAttribute('disabled')
+      expect(button).not.toHaveTextContent("Loading...")
       expect(button).toMatchSnapshot();
       fireEvent.click(button);
     })
     expect(mockClick).toHaveBeenCalledTimes(0);
   })
-  
-  it('primary', async () => {
+
+  it('not disabled, not loading', async () => {
     expect.hasAssertions();
-const { getByTestId } = render(Button, { props: { data: { ...buttonData, type: type.primary } } });
+
+    const mockClick = jest.fn();
+    buttonData.click = mockClick;
+    const { getByTestId } = render(Button, { props: { data: { ...buttonData, loading: false, disabled: false } } });
+    let button
     await waitFor(() => {
-      const button = getByTestId(testId)
-      expect(button.classList.contains(type.primary)).toBe(true);
+      button = getByTestId(testId);
+      expect(button).not.toHaveAttribute('disabled')
+      expect(button).not.toHaveTextContent("Loading...")
       expect(button).toMatchSnapshot();
+      fireEvent.click(button);
     })
+    expect(mockClick).toHaveBeenCalledTimes(1);
   })
-it('secondary', async () => {
+
+  it('disabled, loading', async () => {
     expect.hasAssertions();
-const { getByTestId } = await render(Button, { props: { data: { ...buttonData, type: type.secondary } } });
+
+    const mockClick = jest.fn();
+    buttonData.click = mockClick;
+    const { getByTestId } = render(Button, { props: { data: { ...buttonData, loading: true, disabled: true } } });
+    let button
     await waitFor(() => {
-      const button = getByTestId(testId)
-      expect(button.classList.contains(type.secondary)).toBe(true);
+      button = getByTestId(testId);
+      expect(button).toHaveAttribute('disabled')
+      expect(button).toHaveTextContent("Loading...")
       expect(button).toMatchSnapshot();
+      fireEvent.click(button);
     })
-  })
-it('transparent', async () => {
-    expect.hasAssertions();
-const { getByTestId } = await render(Button, { props: { data: { ...buttonData, type: type.transparent } } });
-    await waitFor(() => {
-      const button = getByTestId(testId)
-      expect(button.classList.contains(type.transparent)).toBe(true);
-      expect(button).toMatchSnapshot();
-    })
+    expect(mockClick).toHaveBeenCalledTimes(0);
   })
 });
